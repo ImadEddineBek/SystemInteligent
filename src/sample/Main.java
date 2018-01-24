@@ -17,7 +17,7 @@ public class Main extends Application {
         primaryStage.getIcons().add(
                 new Image(url));
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("BEKKOUCHE Imad Eddine Ibrahim");
+        primaryStage.setTitle("BEKKOUCHE Imad");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
