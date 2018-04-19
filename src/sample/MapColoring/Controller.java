@@ -11,13 +11,12 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.paint.Color;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import sample.Main;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
-
 public class Controller implements Initializable {
     public ColorPicker color1;
     public ColorPicker color2;
@@ -26,6 +25,7 @@ public class Controller implements Initializable {
     public TextArea TAconstraints;
     public Label result;
     public ChoiceBox<String> type;
+    public WebView webView;
     private Stage primaryStage = Main.primaryStage;
     private Map<Integer, Integer> assignment = new HashMap<>();
     private Map<Integer, ArrayList<Integer>> constraints = new HashMap<>();

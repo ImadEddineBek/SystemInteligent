@@ -86,7 +86,7 @@ public class Controller implements Initializable {
         }
         switch (typeCB.getValue()) {
             case "Greedy":
-                if (solve1.size() == 0) System.out.println("shit");
+                if (solve1.size() == 0) System.out.println("PATH NOT FOUND");
                 else
                     for (int i = 0; i < solve1.size(); i++) {
                         sample.Maze.GeneralProblem.Node<Action> actionNode = solve1.get(i);
@@ -97,7 +97,7 @@ public class Controller implements Initializable {
                     }
                     break;
             case "A*":
-                if (solve2.size() == 0) System.out.println("shit");
+                if (solve2.size() == 0) System.out.println("PATH NOT FOUND");
                 else
                     for (int i = 0; i < solve2.size(); i++) {
                         sample.Maze.GeneralProblem.Node<Action> actionNode = solve2.get(i);
@@ -108,7 +108,7 @@ public class Controller implements Initializable {
                     }
                 break;
             default:
-            if (solve.size() == 0) System.out.println("shit");
+            if (solve.size() == 0) System.out.println("PATH NOT FOUND");
             else
                 for (int i = 0; i < solve.size(); i++) {
                     sample.Maze.GeneralProblem.Node<Action> actionNode = solve.get(i);

@@ -1,44 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="641.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FunctionMax.Controller">
+<AnchorPane prefHeight="913.0" prefWidth="1325.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FunctionMax.Controller">
    <children>
-      <TextField fx:id="numberOfIndivTF" layoutX="292.0" layoutY="41.0" />
-      <Label layoutX="34.0" layoutY="41.0" text="the number of individuals :">
+      <Label layoutX="20.0" layoutY="25.0" text="nb Indiviuals :">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="34.0" layoutY="85.0" text="the type :">
+      <Label layoutX="213.0" layoutY="25.0" text="type :">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="typeCB" layoutX="292.0" layoutY="84.0" prefWidth="150.0" />
-      <Label layoutX="34.0" layoutY="130.0" text="the length of an individual :">
+      <ChoiceBox fx:id="typeCB" layoutX="269.0" layoutY="24.0" prefHeight="28.0" prefWidth="54.0" />
+      <Label layoutX="342.0" layoutY="25.0" text="individual's length :">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="lengthCB" layoutX="292.0" layoutY="129.0" prefWidth="150.0" />
-      <Button layoutX="336.0" layoutY="214.0" mnemonicParsing="false" onAction="#solve" text="Solve" />
-      <Label fx:id="result" layoutX="34.0" layoutY="273.0">
+      <ChoiceBox fx:id="lengthCB" layoutX="507.0" layoutY="24.0" prefHeight="28.0" prefWidth="54.0" />
+      <Button defaultButton="true" layoutX="1082.0" layoutY="22.0" mnemonicParsing="false" onAction="#solve" text="Solve" />
+      <Label fx:id="result" layoutX="1149.0" layoutY="21.0" prefHeight="34.0" prefWidth="77.0">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <Label layoutX="34.0" layoutY="170.0" text="the number of iterations :">
+      <Label layoutX="576.0" layoutY="25.0" text="nb iterations :">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="iterations" layoutX="292.0" layoutY="169.0" prefWidth="150.0" />
-      <Button layoutX="696.0" layoutY="16.0" mnemonicParsing="false" onAction="#back" text="&lt;-" />
+      <ChoiceBox fx:id="iterations" layoutX="699.0" layoutY="24.0" prefHeight="28.0" prefWidth="54.0" />
+      <Button cancelButton="true" layoutX="1244.0" layoutY="22.0" mnemonicParsing="false" onAction="#back" text="&lt;-" />
+      <ChoiceBox fx:id="numberOfIndivTF" layoutX="143.0" layoutY="24.0" prefHeight="28.0" prefWidth="54.0" />
+      <Label layoutX="766.0" layoutY="27.0" text="the function :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="functionCB" layoutX="885.0" layoutY="24.0" prefHeight="28.0" prefWidth="175.0" />
+      <LineChart fx:id="lineChart" layoutX="19.0" layoutY="64.0" prefHeight="837.0" prefWidth="1288.0" title="function">
+        <xAxis>
+          <NumberAxis label="X" side="BOTTOM" fx:id="xLineChart" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yLineChart" label="Y" side="LEFT" />
+        </yAxis>
+      </LineChart>
    </children>
 </AnchorPane>

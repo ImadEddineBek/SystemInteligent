@@ -9,8 +9,9 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
     public static Stage primaryStage;
+
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Main.primaryStage = primaryStage;
         String url = Main.class.getResource("icon.jpg").toString();
         System.out.println(url);
@@ -18,7 +19,9 @@ public class Main extends Application {
                 new Image(url));
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("BEKKOUCHE Imad");
-        primaryStage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("sample/style.css");
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 

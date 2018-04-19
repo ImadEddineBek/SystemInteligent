@@ -5,6 +5,7 @@ import java.util.Random;
 public class Individual implements Comparable<Individual> {
     private int value;
     public static boolean max = true;
+    public static boolean function = true;
 
     public Individual(int value) {
         this.value = value;
@@ -26,7 +27,12 @@ public class Individual implements Comparable<Individual> {
     }
 
     public double getFitness() {
-        return 0.5 * value * value + value - 1;
+        return getY(value);
+    }
+    public static double getY(double x){
+        if (function)
+            return + 0.5 * x * x + x -1;
+        else return 100*Math.sin(x/5) + 100*Math.log(Math.sqrt(3)*x/20)*100000 + (Math.pow(-x,2))/1000;
     }
     public static Individual reproduce(Individual i1 , Individual i2,int length){
         int seperator = new Random().nextInt(length);
@@ -36,12 +42,12 @@ public class Individual implements Comparable<Individual> {
         int lastSecond = i2.value - firstSecond;
         Individual child1 = new Individual(lastFirst+firstSecond);
         Individual child2 = new Individual(lastSecond+firstFirst);
-        if (child1.getFitness()>child2.getFitness())return child1;
+        if (child1.compareTo(child2)>0)return child1;
         return child2;
     }
 
     @Override
     public String toString() {
-        return "value = "+value;
+        return ""+value;
     }
 }

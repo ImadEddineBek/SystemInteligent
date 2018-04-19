@@ -9,7 +9,7 @@ import java.util.*;
 public class TreeSearchIDS< A extends Action,T extends Problem<A>> {
 
     public ArrayList<Node<A>> solve(T problem){
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 20; i++) {
             ArrayList<Node<A>> dls = dls(problem, i);
             if (dls.isEmpty())continue;
             return dls;
